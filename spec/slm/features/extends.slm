@@ -1,4 +1,4 @@
 //output:extends.html
-extends ./extends.layout.jade
+extends ./extends.layout.slm
 block content
   div This is a block

@@ -1,17 +1,17 @@
 {
-  "name": "jade-autocompile",
-  "version": "0.8.5",
-  "description": "Jade autocompiler for Atom.io",
-  "main": "./lib/jade-autocompile.js",
+  "name": "slm-autocompile",
+  "version": "0.1.0",
+  "description": "Slm autocompiler for Atom.io",
+  "main": "./lib/slm-autocompile.js",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ManRueda/jade-autocompile.git"
+    "url": "git+https://github.com/jpsilva/slm-autocompile.git"
   },
   "keywords": [
-    "jade",
+    "slm",
     "compiler",
     "compile",
     "save",
@@ -20,16 +20,16 @@
     "autocompile",
     "html"
   ],
-  "author": "Manuel Rueda",
+  "author": "Justin Silva",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ManRueda/jade-autocompile/issues"
+    "url": "https://github.com/jpsilva/slm-autocompile/issues"
   },
-  "homepage": "https://github.com/ManRueda/jade-autocompile#readme",
+  "homepage": "https://github.com/jpsilva/slm-autocompile#readme",
   "dependencies": {
     "atom-space-pen-views": "2.2.0",
     "domify": "1.4.0",
-    "jade": "1.11.0",
+    "slm": "1.0.0",
     "loophole": "1.1.0",
     "merge": "1.2.0"
   }

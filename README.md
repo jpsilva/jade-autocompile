@@ -1,33 +1,32 @@
-# jade-autocompile package [![Build Status](https://travis-ci.org/ManRueda/jade-autocompile.svg?branch=master)](https://travis-ci.org/ManRueda/jade-autocompile) [![apm](https://img.shields.io/apm/dm/jade-autocompile.svg)](https://atom.io/packages/jade-autocompile) [![apm](https://img.shields.io/apm/v/jade-autocompile.svg)](https://atom.io/packages/jade-autocompile)
+# slm-autocompile package [![Build Status](https://travis-ci.org/ManRueda/slm-autocompile.svg?branch=master)](https://travis-ci.org/ManRueda/slm-autocompile) [![apm](https://img.shields.io/apm/dm/slm-autocompile.svg)](https://atom.io/packages/slm-autocompile) [![apm](https://img.shields.io/apm/v/slm-autocompile.svg)](https://atom.io/packages/slm-autocompile)
 
+Auto compile slm files on save
 
-Auto compile JADE files on save
-
-[Atom package site](https://atom.io/packages/jade-autocompile)
+[Atom package site](https://atom.io/packages/slm-autocompile)
 
 ## Configuration
 The two first comment blocks of file can be used to pass parameters to the compiler.
 
 * The first one must have the name of the output html file, like this:
 
-  ```jade
-  //output:output.html
+  ```slm
+  /output:output.html
   ```
   If you avoid this comment, the file is omitted by the compiler.
 
   The output parameter supports relatives paths and two variables replacement.
-  * $1: Name of the original jade file
+  * $1: Name of the original slm file
   * $2: Extension of the original file.
 
   Also you can add other properties to the compiler, like this:
-  ```jade
-  //output:output.html, pretty:false
+  ```slm
+  /output:output.html, pretty:false
   ```
 
 * The second block can have a javascript object to be used as locals for the compiler.
 
-  ```jade
-  //{
+  ```slm
+  /{
       name: 'Manuel',
       date: new Date,
       myFunc: function(){
@@ -39,6 +38,7 @@ The two first comment blocks of file can be used to pass parameters to the compi
   The MIT License (MIT)
 
   Copyright (c) 2015 Manuel Rueda
+  Copyright (c) 2017 Justin Silva
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal

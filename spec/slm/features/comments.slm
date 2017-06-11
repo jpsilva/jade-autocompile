@@ -4,6 +4,6 @@ html
   head
   body
     // HTML comments
-    //- JADE comments
+    //- slm comments
     //
       HTML block comment

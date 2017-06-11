@@ -10,5 +10,5 @@
 html
   head
   body
-    include ./test8.include.jade
+    include ./test8.include.slm
     span= name
