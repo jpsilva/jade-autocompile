@@ -10,7 +10,7 @@ The two first comment blocks of file can be used to pass parameters to the compi
 * The first one must have the name of the output html file, like this:
 
   ```slm
-  /output:output.html
+  / output: output.html
   ```
   If you avoid this comment, the file is omitted by the compiler.
 
@@ -18,15 +18,16 @@ The two first comment blocks of file can be used to pass parameters to the compi
   * $1: Name of the original slm file
   * $2: Extension of the original file.
 
-  Also you can add other properties to the compiler, like this:
+  e.g. The following line will compile about.slm to about/index.html
+
   ```slm
-  /output:output.html, pretty:false
+  / output: $1/index.html
   ```
 
 * The second block can have a javascript object to be used as locals for the compiler.
 
   ```slm
-  /{
+  / {
       name: 'Manuel',
       date: new Date,
       myFunc: function(){
@@ -34,10 +35,18 @@ The two first comment blocks of file can be used to pass parameters to the compi
       }
     }
   ```
+
+## Slm Language
+
+Checkout the slm-lang README: https://github.com/slm-lang/slm
+
+## About this Package
+
+This package was forked from jade-autocompile Atom extension by Manuel Rueda: https://github.com/ManRueda/jade-autocompile
+
 ## License
   The MIT License (MIT)
 
-  Copyright (c) 2015 Manuel Rueda
   Copyright (c) 2017 Justin Silva
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
