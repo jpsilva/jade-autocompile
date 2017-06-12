@@ -1,4 +1,4 @@
-# slm-autocompile package [![Build Status](https://travis-ci.org/ManRueda/slm-autocompile.svg?branch=master)](https://travis-ci.org/ManRueda/slm-autocompile) [![apm](https://img.shields.io/apm/dm/slm-autocompile.svg)](https://atom.io/packages/slm-autocompile) [![apm](https://img.shields.io/apm/v/slm-autocompile.svg)](https://atom.io/packages/slm-autocompile)
+# slm-autocompile package [![Build Status](https://travis-ci.org/jpsilva/slm-autocompile.svg?branch=master)](https://travis-ci.org/jpsilva/slm-autocompile) [![apm](https://img.shields.io/apm/dm/slm-autocompile.svg)](https://atom.io/packages/slm-autocompile) [![apm](https://img.shields.io/apm/v/slm-autocompile.svg)](https://atom.io/packages/slm-autocompile)
 
 Auto compile slm files on save
 
