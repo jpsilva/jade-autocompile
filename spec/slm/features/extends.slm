@@ -1,4 +1,11 @@
-//output:extends.html
-extends ./extends.layout.slm
-block content
-  div This is a block
+/ output:extends.html
+
+= extend('layout');
+
+= content('title', 'append')
+  title Nice
+
+= content('footer', 'prepend')
+  p This is new footer
+
+div The body

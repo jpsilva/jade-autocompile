@@ -10,5 +10,5 @@
 html
   head
   body
-    include ./test8.include.slm
-    span= name
+    = partial('test8.include.slm')
+    span = this.name

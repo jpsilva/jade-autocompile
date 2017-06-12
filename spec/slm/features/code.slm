@@ -1,5 +1,5 @@
-//output:code.html
-//{
+/ output:code.html
+/ {
     authenticated: true,
     friends: 10,
     aList: ["Uno", "Dos", "Tres","Cuatro", "Cinco", "Seis"]
@@ -8,18 +8,18 @@ doctype html
 html
   head
   body
-    case friends
-      when 0
+    - switch this.friends
+      - case 0:
         p you have no friends
-      when 1
+      - case 1:
         p you have a friend
-      default
-        p you have #{friends} friends
+      - default:
+        p you have ${this.friends} friends
     ul
-      each item in aList
-        li= item
-    span= authenticated.toString() + friends.toString()
-    if authenticated
+      - for item of this.aList
+        li = item
+    span = this.authenticated.toString() + this.friends.toString()
+    - if this.authenticated
       h2 Authenticated
-    else
+    - else
       h2 Not Authenticated

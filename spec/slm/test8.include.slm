@@ -1,4 +1,4 @@
 div
   a
    | This is a partial!
-   span=myFunc()
+   span = this.myFunc()

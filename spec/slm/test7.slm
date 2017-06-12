@@ -1,9 +1,9 @@
-//output:test7.html, pretty:false
+/ output:test7.html
 html
   head
-    script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.18/require.js")
-    script(type="text/javascript" src="js/multi-loader.js")
-    script(type="text/javascript").
+    script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.18/require.js"
+    script type="text/javascript" src="js/multi-loader.js"
+    javascript:
       //call the loader with the JSON path and the root to create the URLs // return a promise
       loadModules('main', '/').then(function(modules){
         //log all the modules to load

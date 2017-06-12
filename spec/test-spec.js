@@ -12,7 +12,7 @@ describe('slm-autocompile module', function() {
     runs(function() {
       compileSlm.call(this, compiler, 'slm/test1.slm', 'slm/test1.html', function(err, data) {
         expect(err).toBeNull();
-        expect(data).toEqual('\n<html></html>');
+        expect(data).toEqual('<html></html>');
         flag = true;
       });
     });
@@ -28,7 +28,7 @@ describe('slm-autocompile module', function() {
     runs(function() {
       compileSlm.call(this, compiler, 'slm/test2.slm', 'slm/test2.html', function(err, data) {
         expect(err).toBeNull();
-        expect(data).toEqual('<html><div><img/></div></html>');
+        expect(data).toEqual('<html><div><img /></div></html>');
         flag = true;
       });
 
@@ -108,29 +108,12 @@ describe('slm-autocompile module', function() {
 
   });
 
-  it('compile the previous test but pretty', function(done) {
-    var flag;
-    runs(function() {
-      compileSlm.call(this, compiler, 'slm/test6.pretty.slm', 'slm/test6.pretty.html', function(err, data) {
-        expect(err).toBeNull();
-        expect(data).toEqual('\n<html>\n  <div>\n    <label>Holaaaa</label>\n  </div>\n  <label>33.5</label>\n  <div><span>9</span>\n    <!--this comment must not \'joder\'-->\n  </div>\n  <section><span>44,Chauuu</span><span>99</span></section>\n</html>');
-        flag = true;
-      });
-
-    });
-
-    waitsFor(function() {
-      return flag;
-    });
-
-  });
-
   it('compile a simple SLM but with some JS inside', function(done) {
     var flag;
     runs(function() {
       compileSlm.call(this, compiler, 'slm/test7.slm', 'slm/test7.html', function(err, data) {
         expect(err).toBeNull();
-        expect(data).toEqual('<html><head><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.18/require.js"></script><script type="text/javascript" src="js/multi-loader.js"></script><script type="text/javascript">//call the loader with the JSON path and the root to create the URLs // return a promise\nloadModules(\'main\', \'/\').then(function(modules){\n  //log all the modules to load\n  console.log(modules);\n}).catch(function(err){\n  //catch the errors\n  console.warn(err);\n});</script></head><body></body></html>');
+        expect(data).toEqual('<html><head><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.18/require.js" type="text/javascript"></script><script src="js/multi-loader.js" type="text/javascript"></script><script type="text/javascript">//call the loader with the JSON path and the root to create the URLs // return a promise\nloadModules(\'main\', \'/\').then(function(modules){\n  //log all the modules to load\n  console.log(modules);\n}).catch(function(err){\n  //catch the errors\n  console.warn(err);\n});</script></head><body></body></html>');
         flag = true;
       });
 
@@ -148,7 +131,7 @@ describe('slm-autocompile module', function() {
     runs(function() {
       compileSlm.call(this, compiler, 'slm/test8.slm', 'slm/test8.html', function(err, data) {
         expect(err).toBeNull();
-        expect(data).toEqual('\n<html>\n  <head></head>\n  <body>\n    <div><a>This is a partial!<span>true</span></a></div><span>Manuel</span>\n  </body>\n</html>');
+        expect(data).toEqual('<html><head></head><body><div><a>This is a partial!<span>true</span></a></div><span>Manuel</span></body></html>');
         flag = true;
       });
     });
@@ -162,7 +145,7 @@ describe('slm-autocompile module', function() {
     runs(function() {
       compileSlm.call(this, compiler, 'slm/test9.slm', 'slm/test9.html', function(err, data) {
         expect(err).toBeNull();
-        expect(data).toEqual('\n<html>\n  <head></head>\n  <body>\n    <div><a>This is a partial!<span>true</span></a></div><span>Manuel</span>\n  </body>\n</html>');
+        expect(data).toEqual('<html><head></head><body><div><a>This is a partial!<span>true</span></a></div><span>Manuel</span></body></html>');
         flag = true;
       });
     });
@@ -176,7 +159,7 @@ describe('slm-autocompile module', function() {
     runs(function() {
       compileSlm.call(this, compiler, 'slm/features/attributes.slm', 'slm/features/attributes.html', function(err, data) {
         expect(err).toBeNull();
-        expect(data).toEqual('<!DOCTYPE html>\n<html>\n  <head></head>\n  <body><a href="google.com" class="button">Google</a><span class="authed"></span>\n    <input type="checkbox" checked><a style="color:red;background:green"></a>\n    <input type="checkbox" name="agreement" checked data-foo="bar"><a id="classes" class="foo bar baz"></a>\n  </body>\n</html>');
+        expect(data).toEqual('<!DOCTYPE html><html><head></head><body><a class="button" href="google.com">Google</a><span class="authed"></span><input checked="checked" type="checkbox" /><a style="color:red;background:green"></a><input checked="checked" name="agreement" type="checkbox" /><a class="foo bar baz" id="classes"></a></body></html>');
         flag = true;
       });
     });
@@ -190,7 +173,7 @@ describe('slm-autocompile module', function() {
     runs(function() {
       compileSlm.call(this, compiler, 'slm/features/code.slm', 'slm/features/code.html', function(err, data) {
         expect(err).toBeNull();
-        expect(data).toEqual('<!DOCTYPE html>\n<html>\n  <head></head>\n  <body>\n    <p>you have 10 friends</p>\n    <ul>\n      <li>Uno</li>\n      <li>Dos</li>\n      <li>Tres</li>\n      <li>Cuatro</li>\n      <li>Cinco</li>\n      <li>Seis</li>\n    </ul><span>true10</span>\n    <h2>Authenticated</h2>\n  </body>\n</html>');
+        expect(data).toEqual('<!DOCTYPE html><html><head></head><body><p>you have 10 friends</p><ul><li>Uno</li><li>Dos</li><li>Tres</li><li>Cuatro</li><li>Cinco</li><li>Seis</li></ul><span>true10</span><h2>Authenticated</h2></body></html>');
         flag = true;
       });
     });
@@ -205,7 +188,7 @@ describe('slm-autocompile module', function() {
     runs(function() {
       compileSlm.call(this, compiler, 'slm/features/comments.slm', 'slm/features/comments.html', function(err, data) {
         expect(err).toBeNull();
-        expect(data).toEqual('<!DOCTYPE html>\n<html>\n  <head></head>\n  <body>\n    <!-- HTML comments-->\n    <!--HTML block comment\n    -->\n  </body>\n</html>');
+        expect(data).toEqual('<!DOCTYPE html><html><head></head><body><!-- HTML comments--><!--HTML block comment--></body></html>');
         flag = true;
       });
     });
@@ -219,7 +202,7 @@ describe('slm-autocompile module', function() {
     runs(function() {
       compileSlm.call(this, compiler, 'slm/features/extends.slm', 'slm/features/extends.html', function(err, data) {
         expect(err).toBeNull();
-        expect(data).toEqual('<!DOCTYPE html>\n<html>\n  <head></head>\n  <body>\n    <div>This is a block</div>\n  </body>\n</html>');
+        expect(data).toEqual('<!DOCTYPE html><html><head><title>Nice</title><style type="text/css">body {background :red};</style></head><body><div>The body</div><p>This is new footer</p></body><script>console.log(\'script\');</script><script type="text/javascript">console.log(\'javascript\');</script></html>');
         flag = true;
       });
     });
@@ -233,7 +216,7 @@ describe('slm-autocompile module', function() {
     runs(function() {
       compileSlm.call(this, compiler, 'slm/features/interpolation.slm', 'slm/features/interpolation.html', function(err, data) {
         expect(err).toBeNull();
-        expect(data).toEqual('<!DOCTYPE html>\n<html>\n  <head></head>\n  <body>\n    <p>This user is authenticated</p>\n  </body>\n</html>');
+        expect(data).toEqual('<!DOCTYPE html><html><head></head><body><p>This user is authenticated</p></body></html>');
         flag = true;
       });
     });
@@ -247,7 +230,7 @@ describe('slm-autocompile module', function() {
     runs(function() {
       compileSlm.call(this, compiler, 'slm/features/mixin.slm', 'slm/features/mixin.html', function(err, data) {
         expect(err).toBeNull();
-        expect(data).toEqual('<!DOCTYPE html>\n<html>\n  <head></head>\n  <body>\n        <ul>\n              <li>1</li>\n              <li>2</li>\n              <li>3</li>\n              <li>4</li>\n              <li>5</li>\n              <li>6</li>\n        </ul>\n  </body>\n</html>');
+        expect(data).toEqual('<!DOCTYPE html><html><head></head><body><ul><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li></ul></body></html>');
         flag = true;
       });
     });

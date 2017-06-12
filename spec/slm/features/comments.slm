@@ -1,9 +1,9 @@
-//output:comments.html
+/ output:comments.html
 doctype html
 html
   head
   body
-    // HTML comments
-    //- slm comments
-    //
+    /!  HTML comments
+    /- slm comments
+    /!
       HTML block comment

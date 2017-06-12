@@ -5,5 +5,5 @@
   }
 html
   div
-    label=var1
-  label=iAmANumber
+    label = this.var1
+  label = this.iAmANumber

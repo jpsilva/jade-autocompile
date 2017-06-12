@@ -6,4 +6,4 @@ doctype html
 html
   head
   body
-    p This user #{authenticated ? 'is' : 'isn\'t'} authenticated
+    p This user ${this.authenticated ? 'is' : 'isn\'t'} authenticated
