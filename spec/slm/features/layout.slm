@@ -1,3 +1,5 @@
+/ main: extends.slm layout.slm
+
 doctype html
 html
   head

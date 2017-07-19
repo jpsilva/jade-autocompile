@@ -1,6 +1,6 @@
 {
   "name": "slm-autocompile",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Slm autocompiler for Atom.io",
   "main": "./lib/slm-autocompile.js",
   "engines": {
